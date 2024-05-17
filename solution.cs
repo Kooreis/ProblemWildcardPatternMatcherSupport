@@ -1,12 +1,3 @@
-using System;
-
-class Program
-{
-    static void Main()
+static bool IsMatch(string str, string pattern)
     {
-        Console.WriteLine("Enter the string:");
-        string str = Console.ReadLine();
-        Console.WriteLine("Enter the pattern:");
-        string pattern = Console.ReadLine();
-        Console.WriteLine(IsMatch(str, pattern));
-    }
+        int s = 0, p = 0, match = 0, starIdx = -1;
