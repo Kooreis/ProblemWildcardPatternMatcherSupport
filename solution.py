@@ -1,7 +1,5 @@
-def match(input, pattern):
-    length = len(input)
-    if len(pattern) - pattern.count('*') > length:
-        return False
-
-    dp = [[False] * (length + 1) for _ in range(len(pattern) + 1)]
-    dp[0][0] = True
+for i in range(1, len(pattern) + 1):
+        if pattern[i - 1] == '*':
+            dp[i][0] = dp[i - 1][0]
+            for j in range(1, length + 1):
+                dp[i][j] = dp[i - 1][j] or dp[i][j - 1]
